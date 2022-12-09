@@ -59,6 +59,7 @@ Route::get('/kurir', function() {
         'title' => 'Kurir',
         'laundries' => Laundry::where('pilihan_pengiriman', '=', 'diantar')
                               ->where('status_cucian', '=', 'selesai dicuci')
+                              ->get()
     ]);
 });
 
