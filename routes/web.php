@@ -57,8 +57,8 @@ Route::get('/services', function() {
 Route::get('/kurir', function() {
     return view('kurir.index', [
         'title' => 'Kurir',
-        'laundries' => Laundry::where('pilihan_pengiriman', '=', 'diantar')
-                              ->where('status_cucian', '=', 'selesai dicuci')
+        'laundries' => Laundry::where('pilihan_pengantaran', 'diantar')
+                              ->where('status_pencucian', 'selesai dicuci')
                               ->get()
     ]);
 });

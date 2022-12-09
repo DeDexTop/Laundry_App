@@ -24,9 +24,9 @@
     <div class="card shadow mb-4 mt-5">
         <div class="card-header py-3">
             <h2 class="ml-5 font-weight-bold text-primary">Daftar Cucian</h2> 
-            <input type="text" placeholder="Cari Nama Anda">
         </div>
         <div class="card-body">
+            <input class="mb-3 ml-5" type="text" placeholder="Cari Nama Anda">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>

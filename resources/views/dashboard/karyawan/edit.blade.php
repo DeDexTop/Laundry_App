@@ -15,7 +15,7 @@
                         <div class="col-md-5 justify-content-center border-right">
                             <div class="p-3 py-5">
                                 <div class="d-flex justify-content-center align-items-center mb-3">
-                                    <h4 class="text-right">Create Profile</h4>
+                                    <h4 class="text-right">Edit Profile</h4>
                                 </div>
                                 <div class="row mt-3">
                                     <div class="col-md-12">
@@ -60,7 +60,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-5 text-center">
-                                    <button class="btn btn-primary profile-button" type="submit" style="width: 115px">Tambah</button>
+                                    <button class="btn btn-primary profile-button" type="submit" style="width: 115px">Edit</button>
                                     <a href="{{ url('/dashboard/karyawan') }}" class="btn btn-primary profile-button ml-3" style="width: 115px">Batal</a>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                                 <div class="row mt-3">
                                     <div class="col-md-12">
                                         <select class="mt-2 form-control @error('role') is-invalid @enderror" name="role">
-                                            <option selected>Pilih Jabatan</option>
+                                            <option selected>Pilih Ulang Jabatan</option>
                                             <option value="Pencuci">Pencuci</option>
                                             <option value="Kasir">Kasir</option>
                                             <option value="Kurir">Kurir</option>

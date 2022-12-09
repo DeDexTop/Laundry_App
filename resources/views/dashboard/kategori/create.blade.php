@@ -31,7 +31,7 @@
                             </div>
                         <div class="mt-5 text-center">
                             <button class="btn btn-primary profile-button ml-4" type="submit" style="width: 115px">Tambah</button>
-                            <a href="{{ url('/dashboard/karyawan') }}" class="btn btn-primary profile-button ml-3" style="width: 115px">Batal</a>
+                            <a href="{{ url('/dashboard/category') }}" class="btn btn-primary profile-button ml-3" style="width: 115px">Batal</a>
                         </div>
                     </div>
                 </div>

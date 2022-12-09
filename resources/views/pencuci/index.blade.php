@@ -28,6 +28,7 @@
               <th scope="col">Status Pembayaran</th>
               <th scope="col">Pilihan Pengriman</th>
               <th scope="col">Total Pembayaran</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -39,6 +40,20 @@
                 <td>{{ $laundry->status_pembayaran }}</td>
                 <td>{{ $laundry->pilihan_pengantaran }}</td>
                 <td>{{ $laundry->total }}</td>
+                <td>
+                  <form action="">
+                    @csrf
+                    @method('put')
+
+                    @if ($laundry->status_pencucian == 'belum dicuci')
+                        <button type="submit" class="btn btn-primary" name="cuci"><i class="fa-solid fa-shirt"></i></button>
+                    @elseif ($laudnry->status_pencucian == 'sedang dicuci')
+                    <button type="submit" class="btn btn-warning" name="sedang"><i class="fa-solid fa-clock"></i></button>
+                    @elseif ($laundry->status_pencucian == '')
+  
+                    @endif
+                  </form>
+                </td>
             </tr>
             @endforeach
           </tbody>
