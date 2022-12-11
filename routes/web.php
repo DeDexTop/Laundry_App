@@ -12,6 +12,7 @@ use App\Models\Kategori;
 use App\Models\Laundry;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CucianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,12 +42,8 @@ Route::get('/about', function() {
     ]);
 });
 
-Route::get('/cucian', function() {
-    return view('status-cucian', [
-        'title' => 'Status Cucian Anda',
-        'laundries' => Laundry::all()
-    ]);
-});
+Route::get('/cucian',[CucianController::class, 'index'] );
+    
 
 Route::get('/services', function() {
     return view('services', [

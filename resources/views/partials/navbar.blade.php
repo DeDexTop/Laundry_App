@@ -12,7 +12,7 @@
                     <div class="main-menu d-none d-lg-block">
                         <nav> 
                             <ul id="navigation">                                                                                          
-                                <li class="{{ Request::is('beranda') ? 'active' : '' }}"><a href="/">Beranda</a></li>
+                                <li class="{{ Request::is('beranda') ? 'active' : '' }}"><a href="/beranda">Beranda</a></li>
                                 <li class="{{ Request::is('about') ? 'active' : '' }}"><a href="/about">Tentang Kami</a></li>
                                 <li class="{{ Request::is('services') ? 'active' : '' }}"><a href="/services">Pelayanan</a></li>
                                 <li class="{{ Request::is('cucian') ? 'active' : '' }}"><a href="/cucian">Cucian Anda</a></li>

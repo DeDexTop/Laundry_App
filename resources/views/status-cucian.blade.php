@@ -1,6 +1,17 @@
 @extends('layout.main')
 
 @section('container')
+
+<script>
+    var input = document.getElementById("search");
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("button").click();
+      }
+    });
+</script>
+
 <main>
     <!--? Hero Start -->
     <div class="slider-area2 section-bg2 hero-overly" data-background="assets/img/hero/hero2.png">
@@ -26,7 +37,10 @@
             <h2 class="ml-5 font-weight-bold text-primary">Daftar Cucian</h2> 
         </div>
         <div class="card-body">
-            <input class="mb-3 ml-5" type="text" placeholder="Cari Nama Anda">
+            <form action="/cucian">
+                <input class="mb-3 ml-5" type="text" placeholder="Cari Nama Anda" id="search" name="search">
+                <button type="submit" id="button" hidden></button>
+            </form>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
