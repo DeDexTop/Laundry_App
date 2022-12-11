@@ -41,14 +41,14 @@
                 <td>{{ $laundry->pilihan_pengantaran }}</td>
                 <td>{{ $laundry->total }}</td>
                 <td>
-                  <form action="">
+                  <form action="/pencuci" method="post">
                     @csrf
                     @method('put')
 
                     @if ($laundry->status_pencucian == 'belum dicuci')
                         <button type="submit" class="btn btn-primary" name="cuci"><i class="fa-solid fa-shirt"></i></button>
                     @elseif ($laudnry->status_pencucian == 'sedang dicuci')
-                    <button type="submit" class="btn btn-warning" name="sedang"><i class="fa-solid fa-clock"></i></button>
+                      <button type="submit" class="btn btn-warning" name="sedang"><i class="fa-solid fa-clock"></i></button>
                     @elseif ($laundry->status_pencucian == '')
   
                     @endif

@@ -67,12 +67,8 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/pencuci', function() {
-        return view('pencuci.index', [
-            'title' => 'Pencuci',
-            'laundries' => Laundry::where('status_pencucian', 'belum dicuci')->get()
-        ]);
-    });
+    Route::get('/pencuci', [LaundryController::class, 'edit']);
+    Route::post('/pencuci', [LaundryController::class, 'update']);
 
 });
 
