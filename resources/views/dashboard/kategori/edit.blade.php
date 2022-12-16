@@ -5,13 +5,13 @@
 <div class="container-fluid">
     <div class="card shadow col-md-8">
         <div class="card-body">
-            <form method="post" action="{{ url('/dashboard/category') }}" enctype="multipart/form-data">
+            <form method="post" action="/dashboard/category/{{ $category->id }}" enctype="multipart/form-data">
                 @method('put')
                 @csrf
                 <div class="justify-content-center">
                     <div class="p-3 py-5">
                         <div class="d-flex justify-content-center align-items-center mb-3">
-                            <h4 class="text-right">Create Category</h4>
+                            <h4 class="text-right">Edit Category</h4>
                         </div>
                         <div class="row mt-3 justify-content-center">
                             <div class="col-md-12">
@@ -31,7 +31,7 @@
                                 @enderror
                             </div>
                         <div class="mt-5 text-center">
-                            <button class="btn btn-primary profile-button ml-4" type="submit" style="width: 115px">Tambah</button>
+                            <button class="btn btn-primary profile-button ml-4" type="submit" style="width: 115px">Ubah</button>
                             <a href="{{ url('/dashboard/category') }}" class="btn btn-primary profile-button ml-3" style="width: 115px">Batal</a>
                         </div>
                     </div>

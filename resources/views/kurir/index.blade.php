@@ -22,6 +22,7 @@
                     <th scope="col">Pilihan Pengriman</th>
                     <th scope="col">Total Pembayaran</th>
                     <th scope="col">Status Pengantaran</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -34,6 +35,18 @@
                       <td>{{ $laundry->pilihan_pengantaran }}</td>
                       <td>{{ $laundry->total }}</td>
                       <td>{{ $laundry->status_pengiriman }}</td>
+                      <td>
+                        <form action="/pencuci/edit/{{ $laundry->id }}" method="post">
+                          @csrf
+                          @method('put')
+      
+                          @if ($laundry->status_pengriman == 'belum diantar')
+                            <button type="submit" class="btn btn-primary" name="antar" value="antar"><i class="fa-solid fa-truck-fast"></i></button>
+                          @elseif ($laundry->status_pengiriman == 'sedang di kirim')
+                            <button type="submit" class="btn btn-success" name="kirim" value="kirim"><i class="fa-solid fa-check"></i></i></button>
+                          @endif 
+                        </form>
+                      </td>
                   </tr>
                   @endforeach
                 </tbody>

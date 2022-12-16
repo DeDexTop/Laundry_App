@@ -55,7 +55,8 @@ Route::get('/kurir', function() {
     return view('kurir.index', [
         'title' => 'Kurir',
         'laundries' => Laundry::where('pilihan_pengantaran', 'diantar')
-                              ->where('status_pencucian', 'selesai dicuci')
+                              ->where('status_pencucian', 'selesai')
+                              ->orWhere('status_pengiriman', 'sedang di kirim')
                               ->get()
     ]);
 });
@@ -67,9 +68,9 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/pencuci', [LaundryController::class, 'edit']);
-    Route::post('/pencuci', [LaundryController::class, 'update']);
-
+    Route::get('/pencuci', [CucianController::class, 'edit']);
+    
+    Route::put('/pencuci/edit/{laundry}', [CucianController::class, 'update'])->name('laundry.update');
 });
 
 

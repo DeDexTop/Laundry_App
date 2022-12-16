@@ -112,13 +112,7 @@ class LaundryController extends Controller
      */
     public function edit(Laundry $laundry)
     {
-        return view('pencuci.index', [
-            'title' => 'Pencuci',
-            'laundries' => $laundry->where('status_pencucian', 'belum dicuci')
-                                   ->orWhere('status_pencucian', 'sedang di proses')
-                                   ->orWhere('status_pencucian', 'sedang dicuci')
-                                   ->get()
-        ]);
+        
     }
 
     /**
@@ -130,23 +124,6 @@ class LaundryController extends Controller
      */
     public function update(Request $request, Laundry $laundry)
     {
-        if($request->cuci)
-        {
-            $request['status_pencucian'] = 'sedang di proses';
-        }
-        else if($request->sedang)
-        {
-            $request['status_pencucian'] = 'sedang di cuci';
-        }
-        else if($request->selesai)
-        {
-            $request['status_pencucian'] = 'selesai';
-        }
-
-        dd($request);
-
-        Laundry::where('id', $laundry->id)
-               ->update($request);
 
     }
 
