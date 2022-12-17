@@ -40,7 +40,7 @@
                           @csrf
                           @method('put')
       
-                          @if ($laundry->status_pengriman == 'belum diantar')
+                          @if ($laundry->status_pengiriman == 'belum diantar')
                             <button type="submit" class="btn btn-primary" name="antar" value="antar"><i class="fa-solid fa-truck-fast"></i></button>
                           @elseif ($laundry->status_pengiriman == 'sedang di kirim')
                             <button type="submit" class="btn btn-success" name="kirim" value="kirim"><i class="fa-solid fa-check"></i></i></button>

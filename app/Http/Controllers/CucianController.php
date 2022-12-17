@@ -36,7 +36,7 @@ class CucianController extends Controller
 
     public function update(Request $request, Laundry $laundry)
     {
-        if($request->cuci == 'cuci')
+        if($request->cuci)
         {
             Laundry::where('id', $laundry->id)
                   ->update(['status_pencucian' => 'sedang di proses']);
@@ -58,7 +58,7 @@ class CucianController extends Controller
             return redirect('/pencuci')->with('success', 'Data Laundry Telah Terubah');
         }
 
-        else if($request->antar == 'antar')
+        else if($request->antar)
         {
             Laundry::where('id', $laundry->id)
                   ->update(['status_pengiriman' => 'sedang di kirim']);
@@ -66,7 +66,7 @@ class CucianController extends Controller
             return redirect('/kurir')->with('success', 'Data Laundry Telah Terubah');
         }
 
-        else if($request->kirim == 'kirim')
+        else if($request->kirim)
         {
             Laundry::where('id', $laundry->id)
                   ->update(['status_pengiriman' => 'selesai di kirim']);
