@@ -69,9 +69,20 @@ class CucianController extends Controller
         else if($request->kirim)
         {
             Laundry::where('id', $laundry->id)
-                  ->update(['status_pengiriman' => 'selesai di kirim']);
+                  ->update([
+                    'status_pengiriman' => 'selesai di kirim',
+                    'status_pembayaran' => 'lunas'
+                ]);
             
             return redirect('/kurir')->with('success', 'Data Laundry Telah Terubah');
+        }
+
+        else if($request->bayar)
+        {
+            Laundry::where('id', $laundry->id)
+                   ->update(['status_pembayaran' => 'lunas']);
+
+            return redirect('/kasir/laundry')->with('success', 'Data Laundry Telah Terubah');
         }
     }
 }

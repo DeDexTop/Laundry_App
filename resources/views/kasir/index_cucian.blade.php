@@ -29,6 +29,7 @@
               <th scope="col">Status Pembayaran</th>
               <th scope="col">Pilihan Pengriman</th>
               <th scope="col">Total Pembayaran</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -40,6 +41,16 @@
                 <td>{{ $laundry->status_pembayaran }}</td>
                 <td>{{ $laundry->pilihan_pengantaran }}</td>
                 <td>{{ $laundry->total }}</td>
+                <td>
+                  <form action="/pencuci/edit/{{ $laundry->id }}" method="post">
+                    @csrf
+                    @method('put')
+
+                    @if ($laundry->status_pembayaran == 'belum lunas' && $laundry->pilihan_pengantaran == 'ambil ditempat')
+                        <button type="submit" class="btn btn-success" name="bayar" value="bayar"><i class="fa-solid fa-dollar-sign"></i></i></i></button>
+                    @endif
+                  </form>
+                </td>
             </tr>
             @endforeach
           </tbody>

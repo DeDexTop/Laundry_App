@@ -56,7 +56,7 @@ Route::get('/kurir', function() {
         'title' => 'Kurir',
         'laundries' => Laundry::where('pilihan_pengantaran', 'diantar')
                               ->where('status_pencucian', 'selesai')
-                              ->orWhere('status_pengiriman', 'sedang di kirim')
+                              ->where('status_pengiriman', '!=', 'selesai di kirim')
                               ->get()
     ]);
 });

@@ -11,6 +11,8 @@ class Laundry extends Model
 
     protected $guarded = ["id"];
 
+    // protected $fillable = ['tgl_masuk'];
+
     public function laundry()
     {
         return $this->hasMany(Detail_Laundry::class);

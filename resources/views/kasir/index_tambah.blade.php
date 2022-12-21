@@ -76,6 +76,7 @@
                 <option selected></option>
                 <option value="lunas">Di Tempat</option>
                 <option value="belum lunas">Saat di Antar</option>
+                <option value="belum lunas">Saat di Ambil</option>
               </select>
               @error('status_pembayaran')
                 <div class="invalid-feedback">
