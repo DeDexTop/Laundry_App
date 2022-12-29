@@ -49,7 +49,7 @@ class CategoryController extends Controller
 
         Category::create($validatedData);
 
-        return redirect('/dashboard/category')->with('success', 'Data Kategori Telah di Ubah');
+        return redirect('/dashboard/category')->with('success', 'Data Kategori Telah di Tambah');
     }
 
     /**

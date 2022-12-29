@@ -74,7 +74,7 @@
               <label for="inputState">Pilihan Pembayaran</label>
               <select id="inputState" class="form-control @error('status_pembayaran') is-invalid @enderror" name="status_pembayaran" required>
                 <option selected></option>
-                <option value="lunas">Di Tempat</option>
+                <option value="lunas">Sekarang</option>
                 <option value="belum lunas">Saat di Antar</option>
                 <option value="belum lunas">Saat di Ambil</option>
               </select>

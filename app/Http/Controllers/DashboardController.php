@@ -27,29 +27,20 @@ class DashboardController extends Controller
 
     public function index()
     {
-        
-        $data = Laundry::select([
-            Laundry::raw('sum(total) as total')
-        ])->get()->groupBy(function ($data){
-            return Carbon::parse($data->created_at)->format('M');
-        });
-
         $total = Laundry::select([
-            Laundry::raw('DATE(tgl_masuk) as month'),
+            Laundry::raw('MONTH(tgl_masuk) as month'),
             Laundry::raw('sum(total) as total'),
         ])
         ->groupBy('month')
+        ->where('status_pembayaran', 'lunas')
         ->get();
-
-
-        // dd($data, $total);
 
         $months = array();
         $totals = [];
 
         foreach ($total as $month) {
             
-            $format = Carbon::parse($month->month)->format('M');
+            $format = Carbon::parse(date('Y-'.$month->month.'-d'))->format('M');
             // $months[] += $month->month;
             array_push($months, $format);
             $totals[] += $month->total;
@@ -61,7 +52,7 @@ class DashboardController extends Controller
             'title' => 'Dashboard',
             'active' => 'Dashboard',
             'total' => Laundry::where('status_pembayaran', 'lunas')->get()->sum('total'),
-            'harian' => Laundry::whereDate('tgl_masuk', Carbon::today())->where('status_pembayaran', 'lunas')->get()->sum('total'),
+            'kiriman' => Laundry::whereDate('tgl_masuk', Carbon::today())->where('status_pengiriman', 'belum diantar')->orWhere('status_pengiriman', 'sedang di kirim')->count(),
             'pending' => Laundry::where('status_pencucian', 'belum dicuci')->count(),
             'tugas' => Laundry::all()->count(),
             'totals' => $totals,

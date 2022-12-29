@@ -26,11 +26,6 @@ use App\Http\Controllers\CucianController;
 */
 
 Route::get('/', function () {
-    return view('login.index', [
-        'title' => 'Login',
-    ]);
-});
-Route::get('/beranda', function () {
     return view('index', [
         'title' => 'Beranda',
     ]);

@@ -14,9 +14,9 @@
       </button>
     </div>
     @endif
-    <div class="card shadow mb-4">
+    <div class="card shadow mb-4 col-lg-10">
       <div class="card-body">
-        <div class="table-responsive col-lg-10">
+        <div class="table-responsive">
           <a href="/dashboard/category/create" class="btn btn-primary mb-3 mt-3">Tambah Kategori Baru</a>
             <table class="table table-striped table-sm">
               <thead>

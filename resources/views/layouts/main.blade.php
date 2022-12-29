@@ -79,8 +79,13 @@
                                     <i class="fas fa-fw fa-tachometer-alt mr-2 text-gray-400"></i>
                                     Dashboard
                                 </a>
-                                <div class="dropdown-divider"></div>
+                                @else
+                                <a class="dropdown-item" href="/">
+                                    <i class="fas fa-fw fa-home-alt mr-2 text-gray-400"></i>
+                                    Beranda
+                                </a>
                                 @endif
+                                <div class="dropdown-divider"></div>
                                 <form action="/logout" method="post">
                                     @csrf
                                     <button class="dropdown-item" type="submit" data-toggle="modal" data-target="#logoutModal">

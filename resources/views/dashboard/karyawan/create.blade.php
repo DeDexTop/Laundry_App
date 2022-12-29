@@ -78,6 +78,7 @@
                                 <div class="row mt-3">
                                     <div class="col-md-12">
                                         <select class="mt-2 form-control @error('role') is-invalid @enderror" name="role">
+                                            <option selected>Pilih Jabatan</option>
                                             <option value="Pencuci">Pencuci</option>
                                             <option value="Kasir">Kasir</option>
                                             <option value="Kurir">Kurir</option>

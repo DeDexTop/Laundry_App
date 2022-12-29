@@ -13,30 +13,12 @@
 
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Pemasukan / Hari </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rp {{ $harian }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Total Pemasukan</div>
+                                Total Pemasukan </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">Rp {{ $total }}</div>
                         </div>
                         <div class="col-auto">
@@ -53,13 +35,9 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Cucian
-                            </div>
-                            <div class="row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $tugas }}</div>
-                                </div>
-                            </div>
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Total Cucian</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $tugas }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -69,18 +47,40 @@
             </div>
         </div>
 
-        <!-- Pending Requests Card Example -->
+        <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Cucian Menunggu</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pending }}</div>
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Cucian Menunggu
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $pending }}</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                            <i class="fas fa-clock fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Requests Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                Kiriman Menunggu</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $kiriman }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-truck-fast fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                     <div class="chart-pie pt-4 pb-2">
                         <canvas id="myPieChart"></canvas>
                     </div>
-                    <div class="mt-4 text-center small">
+                    <div class="mt-4 text-center" style="font-size: 10px">
                         <span class="mr-2">
                             <i class="fas fa-circle text-info"></i> Dicuci
                         </span>
@@ -134,6 +134,9 @@
                         </span>
                         <span class="mr-2">
                             <i class="fas fa-circle text-warning"></i> Menunggu
+                        </span>
+                        <span class="mr-2">
+                            <i class="fas fa-circle text-danger"></i> Belum Dikirim
                         </span>
                     </div>
                 </div>
@@ -156,6 +159,7 @@
     var _pengiriman = JSON.parse('{!! json_encode($pengiriman) !!}');
     var _menunggu = JSON.parse('{!! json_encode($menunggu) !!}');
     var _diambil = JSON.parse('{!! json_encode($diambil) !!}');
+    var _blm_dikirim = JSON.parse('{!! json_encode($kiriman) !!}');
 </script>
     
 <!-- Page level custom scripts -->

@@ -22,6 +22,7 @@
                     <th scope="col">Pilihan Pengriman</th>
                     <th scope="col">Total Pembayaran</th>
                     <th scope="col">Status Pengantaran</th>
+                    <th scope="col">Alamat</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -35,6 +36,7 @@
                       <td>{{ $laundry->pilihan_pengantaran }}</td>
                       <td>{{ $laundry->total }}</td>
                       <td>{{ $laundry->status_pengiriman }}</td>
+                      <td>{{ $laundry->alamat }}</td>
                       <td>
                         <form action="/pencuci/edit/{{ $laundry->id }}" method="post">
                           @csrf

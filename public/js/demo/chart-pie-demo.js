@@ -7,11 +7,11 @@ var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
   type: 'pie',
   data: {
-    labels: ["Dicuci", "Dikirim", "Diambil", "Menuggu"],
+    labels: ["Dicuci", "Dikirim", "Diambil", "Menuggu", "Belum Dikirim"],
     datasets: [{
-      data: [_pencucian, _pengiriman, _diambil, _menunggu],
-      backgroundColor: ['#36b9cc', '#1cc88a', '#4e73df', '#e6bc15'],
-      hoverBackgroundColor: ['#2c9faf', '#17a673', '#2e59d9', '#d5ae10'],
+      data: [_pencucian, _pengiriman, _diambil, _menunggu, _blm_dikirim],
+      backgroundColor: ['#36b9cc', '#1cc88a', '#4e73df', '#e6bc15', '#ff4444'],
+      hoverBackgroundColor: ['#2c9faf', '#17a673', '#2e59d9', '#d5ae10', '#CC0000'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
     }],
   },

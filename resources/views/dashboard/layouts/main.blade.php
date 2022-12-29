@@ -66,7 +66,7 @@
                 <span>Kategori</span></a>
             </li>
             <li class="nav-item">
-                <a href="/beranda" class="nav-link">
+                <a href="/" class="nav-link">
                 <i class="fas fa-fw fa-home"></i>
                 <span>Beranda</span></a>
             </li>

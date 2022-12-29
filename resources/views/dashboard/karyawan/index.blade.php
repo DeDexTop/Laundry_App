@@ -7,16 +7,16 @@
     </div>
 
     @if (session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show col-lg-4" role="alert">
+    <div class="alert alert-success alert-dismissible fade show col-lg-6" role="alert">
       {{ session('success') }}
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     @endif
-    <div class="card shadow mb-4">
+    <div class="card shadow mb-4 col-lg-10">
       <div class="card-body">
-        <div class="table-responsive col-lg-10">
+        <div class="table-responsive ">
           <a href="/dashboard/user/create" class="btn btn-primary mb-3 mt-3">Tambah Pegawai Baru</a>
             <table class="table table-striped table-sm">
               <thead>
